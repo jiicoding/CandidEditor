@@ -100,6 +100,7 @@ class Canvas extends Sprite {
 		//this.y = Std.int((stage.mouseY) - (this.y));
 
 		// Update status bar's zoom info
+		if (Common.statusBar != null)
 		Common.statusBar.setZoomLevel(scaleX * 100);
 	}
 
@@ -109,8 +110,9 @@ class Canvas extends Sprite {
 	}
 	public function onMouseWheelUp(evt:MouseEvent){
 		stopDrag();
+		trace("after drag x,y",this.x,this.y);
 	}
-
+	// bresenham line draw, munging the bitmap data directly
 	public function drawLine(x1:Int, y1:Int, x2:Int, y2:Int, color:UInt):Void {
 		// delta of exact value and rounded value of the dependant variable
 		var d:Int = 0;

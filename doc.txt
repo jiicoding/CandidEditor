@@ -1,0 +1,11 @@
+
+canvas zooming, is done by flash
+
+canvas.x , y is originally at 0, but can move around
+
+point offset is by canvas.x , y location
+		lastMouseX = Std.int(stage.mouseX - this.x);
+		lastMouseY = Std.int(stage.mouseY - this.y);
+
+
+pen drawing is using bresenham line algorith, pass in current scale factor so the point is aligned with the zoom
